@@ -1,0 +1,50 @@
+﻿# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.282
+    hooks:
+    -   id: ruff
+        args: [ --fix, --exit-non-zero-on-fix ]
+        types: [file]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+        types: [yaml]
+      - id: check-json
+        types: [json]
+      - id: end-of-file-fixer
+        types: [file]
+      - id: trailing-whitespace
+        types: [file]
+      - id: check-ast
+        types: [python]
+
+  - repo: https://github.com/pycqa/flake8.git
+    rev: 3.9.2
+    hooks:
+      - id: flake8
+        exclude: 'tests|env|docs'
+        types: [python]
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        types: [python]
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-no-eval
+        types: [python]
+      - id: python-use-type-annotations
+        types: [python]
+
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.10.0
+    hooks:
+      - id: reorder-python-imports
+        types: [python]

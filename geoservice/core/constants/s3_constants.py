@@ -1,0 +1,5 @@
+class S3Constants:
+    BUCKET_NAME = ""
+    BUCKET_REGION = ""
+    BUCKET_URL_EXPIRY = 3600
+    AERIAL_VIEW_BUCKET_NAME = ""
